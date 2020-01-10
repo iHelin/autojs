@@ -9,7 +9,7 @@ function start() {
 //启动程序
 function openAPP() {
     app.launchApp("微信读书");
-    
+
     waitForPackage("com.tencent.weread");
     backAndEnter();
 
@@ -24,10 +24,15 @@ function openAPP() {
 
 function read() {
     while (true) {
-        swipe(600, 600, 300, 600, 300);
-        var sleepNum = random(10000, 15000);
-        toastLog("等待" + sleepNum);
-        sleep(sleepNum);
+        if (currentActivity() === "com.tencent.weread.ReaderFragmentActivity") {
+            swipe(600, 600, 300, 600, 300);
+            var sleepNum = random(10000, 15000);
+            toastLog("等待" + sleepNum);
+            sleep(sleepNum);
+        } else {
+            toastLog("请进入阅读页面！");
+            sleep(5000);
+        }
     }
 }
 
@@ -47,5 +52,5 @@ function backAndEnter() {
 //是否是主页
 function isHomePage() {
     // currentPackage() === "com.tencent.weread"
-    return currentActivity() === "com.tencent.weread.WeReadFragmentActivity" && id("rx").findOne(200) !== null;
+    return id("rx").findOne(200) !== null;
 }
