@@ -1,4 +1,8 @@
 
+var waitTime = 20000;
+var forward = true;
+
+auto.waitFor();
 start();
 
 function start() {
@@ -25,9 +29,20 @@ function openAPP() {
 function read() {
     while (true) {
         if (currentActivity() === "com.tencent.weread.ReaderFragmentActivity") {
-            swipe(600, 600, 300, 600, 300);
-            var sleepNum = random(10000, 15000);
-            toastLog("等待" + sleepNum);
+            if (forward) {
+                swipe(device.width / 2 + 200, device.height / 2, device.width / 2 - 200, device.height / 2, random(300, 1000));
+            } else {
+                swipe(device.width / 2 - 200, device.height / 2, device.width / 2 + 200, device.height / 2, random(300, 1000));
+            }
+
+            if (textContains("已\n读\n完").exists()) {
+                //开始反向滑动
+                toastLog("开始反向滑动");
+                forward = false;
+            }
+
+            var sleepNum = random(waitTime - 1000, waitTime + 1000);
+            toastLog("等待" + sleepNum + "毫秒");
             sleep(sleepNum);
         } else {
             toastLog("请进入阅读页面！");

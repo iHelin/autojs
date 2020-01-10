@@ -1,6 +1,15 @@
 toast("hello");
 
-log(colors.isSimilar("#ff0000","#ff0f00"));
+console.log(textContains("已\n读\n完").exists());
+
+
+
+
+// log(colors.isSimilar("#ff0000","#ff0f00"));
+
+
+
+// img.recycle();
 
 // var a = desc("评论").find();
 
@@ -21,3 +30,5 @@ log(colors.isSimilar("#ff0000","#ff0f00"));
 // 赞 = text("赞").findOne();
 // 赞的父控件 = 赞.parent();
 // 赞的父控件.click();
+
+

@@ -27,27 +27,41 @@ main();
 
 function main() {
     // prepare();
+
     toast("请在5秒内打开游戏，并点击开始按钮");
 
-    waitForPackage("com.tencent.mm");
+    // click("开始游戏");
+
+    // waitForPackage("com.tencent.mm");
     // sleep(5000);
 
-    while (currentPackage() == "com.tencent.mm") {
-        sleep(3000);
-        //请求横屏截图
-        toast(new Date());
-        // requestScreenCapture(true);
-        if(!requestScreenCapture()){
-            toast("请求截图失败");
-            exit();
-        }else{
-            toast(123456);
-        }
-        var im = captureScreen();
-        console.log(im);
-
-
-        img.recycle();
+    // while (currentPackage() == "com.tencent.mm") {
+    sleep(1000);
+    //请求横屏截图
+    toast(new Date());
+    // requestScreenCapture(true);
+    if (!requestScreenCapture()) {
+        toast("请求截图失败");
+        exit();
+    } else {
+        toast(123456);
     }
+
+    app.launchApp("微信");
+    waitForPackage("com.tencent.mm");
+
+    click(369, 593);
+    sleep(2000);
+
+    var img = captureScreen();
+    console.log(img);
+    var color = images.pixel(img, 244, 882);
+    console.log(color);
+    console.log(colors.toString(color));
+    ;
+
+
+    img.recycle();
+    // }
 }
 // 获取棋子
