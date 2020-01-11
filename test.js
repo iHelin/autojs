@@ -1,6 +1,14 @@
 toast("hello");
 
-console.log(textContains("已\n读\n完").exists());
+// console.log(textEndsWith("关注").exists());
+
+// console.log(textEndsWith("关注").findOne());
+
+console.log(textEndsWith("去逛逛").exists());
+
+textEndsWith("去逛逛").findOne().click();
+
+
 
 
 // log(colors.isSimilar("#ff0000","#ff0f00"));

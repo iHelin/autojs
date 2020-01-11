@@ -1,5 +1,5 @@
-
-var waitTime = 10000;
+//等待时间，单位：秒
+var waitTime = 10;
 
 auto.waitFor();
 start();
@@ -15,16 +15,16 @@ function openAPP() {
 
 function read() {
     while (true) {
-        if (currentActivity() === "com.kuaishou.athena.MainActivity") {
+        if (currentActivity() === "com.kuaishou.athena.MainActivity" && text("关注").exists()) {
+
+            sleep(500);
             swipe(device.width / 2, device.height / 2 + 500, device.width / 2, device.height / 2 - 500, random(300, 1000));
 
-
-            var sleepNum = random(waitTime - 1000, waitTime + 1000);
-            toastLog("等待" + sleepNum + "毫秒");
-            sleep(sleepNum);
-            // } else {
-            //     toastLog("请进入阅读页面！");
-            //     sleep(5000);
+            toastLog("等待" + waitTime + "秒");
+            sleep(waitTime * 1000);
+        } else {
+            toastLog("请进入视频页！");
+            sleep(3000);
         }
     }
 }

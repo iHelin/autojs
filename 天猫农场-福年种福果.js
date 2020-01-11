@@ -6,8 +6,8 @@ var width = device.width;
 // toast("设备高" + height);
 autoplay();
 function autoplay() {
-    if (textEndsWith("签到").exists()) {
-        textEndsWith("签到").findOne().click();
+    if (textEndsWith("去签到").exists()) {
+        textEndsWith("去签到").findOne().click();
         sleep(1600);
         toast("签到成功")
     }

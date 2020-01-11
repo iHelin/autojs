@@ -1,5 +1,5 @@
-
-var waitTime = 20000;
+//等待时间，单位：秒
+var waitTime = 20;
 var forward = true;
 
 auto.waitFor();
@@ -12,18 +12,22 @@ function start() {
 
 //启动程序
 function openAPP() {
-    app.launchApp("微信读书");
+    if (app.launchApp("微信读书")) {
+        waitForPackage("com.tencent.weread");
+        backAndEnter();
 
-    waitForPackage("com.tencent.weread");
-    backAndEnter();
+        id("rw").findOne().click();
+        sleep(1000);
 
-    id("rw").findOne().click();
-    sleep(1000);
+        id("hp").findOne().parent().click();
+        sleep(1000);
 
-    id("hp").findOne().parent().click();
-    sleep(1000);
+        read();
+    } else {
+        toastLog("请安装微信读书后再试！");
+    }
 
-    read();
+
 }
 
 function read() {
@@ -41,9 +45,8 @@ function read() {
                 forward = false;
             }
 
-            var sleepNum = random(waitTime - 1000, waitTime + 1000);
-            toastLog("等待" + sleepNum + "毫秒");
-            sleep(sleepNum);
+            toastLog("等待" + waitTime + "秒");
+            sleep(waitTime * 1000);
         } else {
             toastLog("请进入阅读页面！");
             sleep(5000);

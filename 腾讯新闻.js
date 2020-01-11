@@ -195,7 +195,7 @@ function resting() {
     var remainTime = config.restTime;
     var stop = setInterval(function () {
         remainTime -= 4000;
-        swipe(300, 600, 315, 600, 300)
+        swipe(300, 600, 315, 600, 300);
         toast('休息中,距离开工还有' + remainTime / 1000 + "秒");
     }, 4000)
     setTimeout(function () {
@@ -215,7 +215,6 @@ function randomSwipeDown(startY, endY) {
 function openAPP() {
     app.launchApp("腾讯新闻极速版");
     // app.launch("com.tencent.news.lite");
-    // waitForActivity("com.tencent.news.activity.SplashActivity");
 }
 
 //关闭app,有bug,无法调用:result返回true,但是没有跳转到设置页

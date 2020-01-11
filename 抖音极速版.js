@@ -15,7 +15,7 @@ function openAPP() {
 
 function read() {
     while (true) {
-        if (currentActivity() === "com.yxcorp.gifshow.HomeActivity") {
+        if (currentActivity() === "com.ss.android.ugc.aweme.main.MainActivity") {
 
             sleep(500);
             swipe(device.width / 2, device.height / 2 + 500, device.width / 2, device.height / 2 - 500, random(300, 1000));

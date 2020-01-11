@@ -1,5 +1,5 @@
 //等待时间，单位：秒
-var waitTime = 10;
+var waitTime = 25;
 
 auto.waitFor();
 start();
@@ -15,7 +15,7 @@ function openAPP() {
 
 function read() {
     while (true) {
-        if (currentActivity() === "com.yxcorp.gifshow.HomeActivity") {
+        if (currentActivity() === "com.ss.android.ugc.live.detail.DetailActivity") {
 
             sleep(500);
             swipe(device.width / 2, device.height / 2 + 500, device.width / 2, device.height / 2 - 500, random(300, 1000));
