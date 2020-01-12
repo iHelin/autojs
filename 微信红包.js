@@ -3,7 +3,7 @@
 start();
 
 function start() {
-    toast("监听中。。。");
+    toastLog("监听红包中");
 
     threads.start(function () {//在子进程中运行监听事件
         events.observeNotification();

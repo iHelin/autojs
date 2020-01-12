@@ -22,9 +22,6 @@ function read() {
 
             toastLog("等待" + waitTime + "秒");
             sleep(waitTime * 1000);
-        } else {
-            toastLog("请进入视频页！");
-            sleep(3000);
         }
     }
 }
