@@ -1,5 +1,5 @@
 //等待时间，单位：秒
-var waitTime = 15;
+var waitTime = 20;
 
 auto.waitFor();
 start();
