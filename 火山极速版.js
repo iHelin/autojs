@@ -5,15 +5,6 @@ auto.waitFor();
 start();
 
 function start() {
-    openAPP();
-}
-
-//启动程序
-function openAPP() {
-    read();
-}
-
-function read() {
     while (true) {
         if (currentActivity() === "com.ss.android.ugc.live.detail.DetailActivity") {
 

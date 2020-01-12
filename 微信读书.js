@@ -16,11 +16,12 @@ function openAPP() {
         waitForPackage("com.tencent.weread");
         backAndEnter();
 
-        id("rw").findOne().click();
-        sleep(1000);
+        text("书架").findOne().click();
+        sleep(2000);
 
-        id("hp").findOne().parent().click();
-        sleep(1000);
+        // id("hp").findOne().parent().click();
+        click(140, 442);
+        sleep(2000);
 
         read();
     } else {
@@ -48,7 +49,7 @@ function read() {
             toastLog("等待" + waitTime + "秒");
             sleep(waitTime * 1000);
         } else {
-            toastLog("请进入阅读页面！");
+            log("请进入阅读页面！");
             sleep(5000);
         }
     }
@@ -59,10 +60,6 @@ function backAndEnter() {
     if (!isHomePage()) {
         back();
         sleep(1500);
-        // if(currentActivity() === "com.miui.home.launcher.Launcher"){
-        // openAPP();
-        // break;
-        // }
     }
 }
 
@@ -70,5 +67,5 @@ function backAndEnter() {
 //是否是主页
 function isHomePage() {
     // currentPackage() === "com.tencent.weread"
-    return id("rx").findOne(2000) !== null;
+    return currentPackage() === "com.tencent.weread" && text("发现").findOne(2000) !== null && text("书架").findOne(2000) !== null && text("看一看").findOne(2000) !== null && text("我").findOne(2000) !== null;
 }
