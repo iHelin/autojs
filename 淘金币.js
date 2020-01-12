@@ -7,6 +7,11 @@ autoplay();
 
 function autoplay() {
     sleep(2000);
+    if (text("打卡").exists()) {
+        text("打卡").findOne().click();
+        sleep(2000);
+        toast("打卡成功");
+    }
     while (textEndsWith("去逛逛").exists()) {
         //要支持的动作
         toast("存在去逛逛");

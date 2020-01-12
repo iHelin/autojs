@@ -9,7 +9,12 @@ function autoplay() {
     if (textEndsWith("去签到").exists()) {
         textEndsWith("去签到").findOne().click();
         sleep(1600);
-        toast("签到成功")
+        toast("签到成功");
+    }
+    if (textEndsWith("去兑换").exists()) {
+        textEndsWith("去兑换").findOne().click();
+        sleep(1600);
+        toast("兑换成功");
     }
     sleep(2000);
     toast("完成[签到]检测");
