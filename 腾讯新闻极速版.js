@@ -27,9 +27,6 @@ function start() {
     text("推荐").findOne().click();
     sleep(2000);
 
-    console.log(text(tab).findOne().bounds());
-    // click(text(tab).findOne().bounds().centerX(), text(tab).findOne().bounds().centerY());
-    
     text(tab).findOne().click();
     text(tab).findOne().click();
     sleep(2000);
@@ -42,7 +39,7 @@ function readNews() {
     var newsSelectors = id("b4").find();
     toastLog("列表数量" + newsSelectors.size());
 
-    click(newsSelectors[newsSelectors.size()-1].bounds().centerX(), newsSelectors[newsSelectors.size()-1].bounds().centerY());
+    click(newsSelectors[newsSelectors.size() - 1].bounds().centerX(), newsSelectors[newsSelectors.size() - 1].bounds().centerY());
 
     toast("开始阅读新闻。");
     sleep(2000);
@@ -51,7 +48,9 @@ function readNews() {
         if (id(assemblyId.redPacket).exists()) {
             sleep(1000);
             do {
-                swipe(device.width / 2 + 100, device.height / 2 + 200, device.width / 2 + 100, device.height / 2 - 200, random(400, 500));
+                if (currentActivity() === "com.tencent.news.ui.NewsDetailActivity") {
+                    swipe(device.width / 2 + 100, device.height / 2 + 200, device.width / 2 + 100, device.height / 2 - 200, random(400, 500));
+                }
                 sleep(random(2000, 3000));
             } while (!text("查看更多评论").exists());
 

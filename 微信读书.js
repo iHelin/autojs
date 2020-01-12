@@ -34,9 +34,9 @@ function read() {
     while (true) {
         if (currentActivity() === "com.tencent.weread.ReaderFragmentActivity") {
             if (forward) {
-                swipe(device.width / 2 + 200, device.height / 2, device.width / 2 - 200, device.height / 2, random(300, 1000));
+                swipe(device.width / 2 + 200, device.height / 2, device.width / 2 - 200, device.height / 2, random(300, 600));
             } else {
-                swipe(device.width / 2 - 200, device.height / 2, device.width / 2 + 200, device.height / 2, random(300, 1000));
+                swipe(device.width / 2 - 200, device.height / 2, device.width / 2 + 200, device.height / 2, random(300, 600));
             }
 
             if (textContains("已\n读\n完").exists()) {
@@ -70,5 +70,5 @@ function backAndEnter() {
 //是否是主页
 function isHomePage() {
     // currentPackage() === "com.tencent.weread"
-    return id("rx").findOne(200) !== null;
+    return id("rx").findOne(2000) !== null;
 }
