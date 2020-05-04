@@ -58,7 +58,6 @@ function main() {
     var color = images.pixel(img, 244, 882);
     console.log(color);
     console.log(colors.toString(color));
-    ;
 
 
     img.recycle();
