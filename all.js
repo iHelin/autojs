@@ -4,7 +4,7 @@ threads.start(function () {//在子进程中运行监听事件
     //抖音
     var waitTime = 20;
 
-   
+
     start();
 
     function start() {
@@ -12,7 +12,7 @@ threads.start(function () {//在子进程中运行监听事件
             if (currentActivity() === "com.ss.android.ugc.aweme.main.MainActivity") {
 
                 sleep(500);
-                swipe(device.width / 2, device.height / 2 + 500, device.width / 2, device.height / 2 - 500, random(300, 1000));
+                swipe(device.width / 2, device.height / 2 + 500, device.width / 2, 200, random(300, 700));
 
                 toastLog("等待" + waitTime + "秒");
                 sleep(waitTime * 1000);
@@ -32,7 +32,7 @@ threads.start(function () {//在子进程中运行监听事件
             if (currentActivity() === "com.ss.android.ugc.live.detail.DetailActivity") {
 
                 sleep(500);
-                swipe(device.width / 2, device.height / 2 + 500, device.width / 2, device.height / 2 - 500, random(300, 1000));
+                swipe(device.width / 2, device.height / 2 + 500, device.width / 2, 200, random(300, 700));
 
                 toastLog("等待" + waitTime + "秒");
                 sleep(waitTime * 1000);
@@ -52,7 +52,7 @@ threads.start(function () {//在子进程中运行监听事件
             if (currentActivity() === "com.yxcorp.gifshow.HomeActivity") {
 
                 sleep(500);
-                swipe(device.width / 2, device.height / 2 + 500, device.width / 2, device.height / 2 - 700, random(300, 1000));
+                swipe(device.width / 2, device.height / 2 + 500, device.width / 2, 200, random(300, 700));
 
                 toastLog("等待" + waitTime + "秒");
                 sleep(waitTime * 1000);
@@ -72,7 +72,7 @@ threads.start(function () {//在子进程中运行监听事件
             if (currentActivity() === "com.kuaishou.athena.MainActivity" && text("关注").exists()) {
 
                 sleep(500);
-                swipe(device.width / 2, device.height / 2 + 500, device.width / 2, device.height / 2 - 500, random(300, 1000));
+                swipe(device.width / 2, device.height / 2 + 500, device.width / 2, 200, random(300, 700));
 
                 toastLog("等待" + waitTime + "秒");
                 sleep(waitTime * 1000);
@@ -94,7 +94,7 @@ threads.start(function () {//在子进程中运行监听事件
             if (currentActivity() === "com.jm.video.ui.main.MainActivity") {
 
                 sleep(500);
-                swipe(device.width / 2, device.height / 2 + 500, device.width / 2, device.height / 2 - 700, 600);
+                swipe(device.width / 2, device.height / 2 + 500, device.width / 2, 200, random(300, 700));
 
                 toastLog("等待" + waitTime + "秒");
                 sleep(waitTime * 1000);

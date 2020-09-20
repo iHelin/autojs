@@ -1,12 +1,12 @@
 toast("hello");
 
-// console.log(textEndsWith("关注").exists());
+console.log(textEndsWith("关注").findOne().bounds());
 
 // console.log(textEndsWith("关注").findOne());
 
-console.log(textEndsWith("去逛逛").exists());
+// console.log(textEndsWith("去逛逛").exists());
 
-textEndsWith("去逛逛").findOne().click();
+// textEndsWith("去逛逛").findOne().click();
 
 
 
