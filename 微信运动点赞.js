@@ -1,14 +1,6 @@
 
 auto.waitFor();
 
-// var rect = id('br').findOne().bounds();
-// var y2 = rect.bottom;
-
-//             toastLog(y2);
-//             swipe(device.width / 2 + random(-100, 100), device.height - 10, device.width / 2 + random(-100, 100), y2, random(1000, 2000));
-
-//             exit();
-
 start();
 
 function start() {
