@@ -34,9 +34,9 @@ function start() {
 
                     if (text('赞我的朋友').exists()) {
                         back();
-                        sleep(random()*3000);
+                        sleep(random() * 3000);
                         toastLog('111');
-                        toastLog('index='+index)
+                        toastLog('index=' + index)
                     }
                     if (textEndsWith('的主页')) {
                         back();
