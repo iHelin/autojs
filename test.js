@@ -1,15 +1,10 @@
-toast("hello");
-
-console.log(textEndsWith("关注").findOne().bounds());
+// console.log(textEndsWith("关注").findOne().bounds());
 
 // console.log(textEndsWith("关注").findOne());
 
 // console.log(textEndsWith("去逛逛").exists());
 
 // textEndsWith("去逛逛").findOne().click();
-
-
-
 
 // log(colors.isSimilar("#ff0000","#ff0f00"));
 
@@ -38,3 +33,12 @@ console.log(textEndsWith("关注").findOne().bounds());
 // 赞的父控件.click();
 
 
+
+// 随机生成数字
+// let i = random(48,57);
+// let i = random(65,90);
+let i = random(97, 122);
+toastLog(i);
+// 随机生成字母
+
+//随机生成汉字
