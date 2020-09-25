@@ -169,8 +169,6 @@ function main() {
     }
 }
 
-
-
 function prepare() {
     //确保无障碍服务开启
     auto();

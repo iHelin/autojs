@@ -28,7 +28,6 @@ function openAPP() {
         toastLog("请安装微信读书后再试！");
     }
 
-
 }
 
 function read() {

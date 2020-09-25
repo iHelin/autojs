@@ -40,5 +40,7 @@
 let i = random(97, 122);
 toastLog(i);
 // 随机生成字母
+let a = String.fromCharCode(i);
+toastLog(a);
 
-//随机生成汉字
+

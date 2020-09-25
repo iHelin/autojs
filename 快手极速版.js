@@ -3,7 +3,6 @@ var waitTime = 20;
 
 auto.waitFor();
 start();
-
 function start() {
     while (true) {
         if (currentActivity() === "com.yxcorp.gifshow.HomeActivity") {
