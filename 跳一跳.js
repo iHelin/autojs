@@ -29,7 +29,7 @@ const max = Math.max;
 const abs = Math.abs;
 
 //如果debug为true则开启调试，将会把每次计算的棋子位置和目标位置标记在截图中并保存在一下目录
-const debug = false;
+const debug = true;
 const debug_images_dir = "/sdcard/debug/";
 
 prepare();
@@ -80,7 +80,7 @@ function find_board(im, piece) {
         var board_x_sum = 0;
         var board_x_c = 0;
 
-        for (let j = 0; j < w; j++) {
+        for (let j = 0; j < w; j+=3) {
             var pixel = im.pixel(j, i);
             // 修掉脑袋比下一个小格子还高的情况的 bug
             
@@ -88,7 +88,7 @@ function find_board(im, piece) {
                 continue;
             }
 
-            // 修掉圆顶的时候一条线导致的小 bug，这个颜色判断应该 OK，暂时不提出来
+            // 修掉圆顶的时候一条线导致的小bug，这个颜色判断应该 OK，暂时不提出来
             if (abs(red(pixel) - red(last_pixel)) + abs(blue(pixel) - blue(last_pixel)) + abs(green(pixel) - green(last_pixel)) > 10) {
                 board_x_sum += j;
                 board_x_c += 1;
@@ -176,7 +176,7 @@ function prepare() {
     auto();
     //请求截图权限
     requestScreenCapture();
-    device.keepScreenOn(1000 * 3600);
+    device.keepScreenOn(1000 * 3600);//单位毫秒
     events.on("exit", function () {
         device.cancelKeepingAwake();
     });
