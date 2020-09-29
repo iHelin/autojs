@@ -37,10 +37,24 @@
 // 随机生成数字
 // let i = random(48,57);
 // let i = random(65,90);
-let i = random(97, 122);
-toastLog(i);
+// let i = random(97, 122);
+// toastLog(i);
 // 随机生成字母
-let a = String.fromCharCode(i);
-toastLog(a);
+// let a = String.fromCharCode(i);
+// toastLog(a);
 
 
+
+
+// let startTime = Date.now();
+//         let endTime = Date.now() + 1000 * 60 * 1;
+// toastLog(startTime);
+
+// toastLog(endTime);
+
+back();
+sleep(200);
+back();
+// back();
+
+// toastLog(currentPackage());
