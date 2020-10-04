@@ -53,8 +53,9 @@ function grab() {
         redPackages[redPackages.size() - 1].click();
         waitForActivity(openRedPackageActivit, 50);
         desc("开").findOne().click();
-        sleep(2000);
+        sleep(3000);
+        home();
     } else {
-        toastLog("手慢了。或者红包id修改了，请联系开发者！");
+        toastLog("手慢了，或者红包id修改了，请联系开发者！");
     }
 }
