@@ -44,7 +44,7 @@ function grab() {
     var redPackages = id(redPackageId).find();
     if (redPackages.size() > 0) {
         redPackages[redPackages.size() - 1].click();
-        waitForActivity("com.tencent.mm.plugin.luckymoney.ui.LuckyMoneyNotHookReceiveUI", 10);
+        waitForActivity("com.tencent.mm.plugin.luckymoney.ui.LuckyMoneyNotHookReceiveUI", 50);
         desc("开").findOne().click();
         sleep(2000);
     } else {
