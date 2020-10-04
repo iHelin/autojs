@@ -10,11 +10,8 @@ function start() {
         events.onNotification(function (notification) {
             if (notification.getPackageName() === 'com.tencent.mm' && notification.getText().indexOf("[微信红包]") > -1) {
                 notification.click();
-
                 grab();
-
             }
-
         });
     });
 
@@ -22,7 +19,7 @@ function start() {
     threads.start(function () {
 
         while (true) {
-            if (currentActivity() === "com.tencent.mm.ui.LauncherUI" && id("dk_").findOne(200) !== null) {
+            if (currentActivity() === "com.tencent.mm.ui.LauncherUI" && id('b4r').findOne(200) !== null) {
                 if (textContains("[微信红包]").find().size() > 0) {
                     textContains("[微信红包]").findOne().parent().parent().parent().parent().click();
                     grab();

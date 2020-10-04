@@ -58,4 +58,27 @@ auto.waitFor();
 // back();
 // back();
 
-// toastLog(currentPackage());
+// log('红包左上：' + x, y);
+
+// let nums = text('微信红包').find();
+// if (!nums.empty()) {
+// for (let i = nums.size() - 1; i >= 0; i--) {
+//     let rect = nums[i].bounds();
+//     log('文字左上：' + rect.left, rect.top);
+//     if (rect.left > x && rect.top > y
+//         && rect.right <= nums[i].parent().bounds().right
+//         && rect.bottom <= nums[i].parent().bounds().bottom) {
+//         toastLog("找到红包啦！");
+//         click(rect.centerX(), rect.centerY());
+//         waitForActivity("com.tencent.mm.plugin.luckymoney.ui.LuckyMoneyNotHookReceiveUI", 50);
+//         desc("开").findOne().click();
+//         // break;
+//         sleep(1000)
+//     } else {
+//         log('红包被领取！');
+//     }
+// }
+// }
+
+toastLog(currentPackage());
+toastLog('currentActivity:' + currentActivity());
